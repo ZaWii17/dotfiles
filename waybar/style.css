@@ -42,7 +42,7 @@ window#waybar {
 }
 #battery {
   margin: 2px 0px;
-  border-radius: 4px;
+  border-radius: 0px;
   min-width: 40px;
 }
 #clock {
