@@ -8,6 +8,6 @@
     "margin-bottom": 0,
     "margin-left": 2,
 
-    "modules-right": ["clock", "network", "battery", "pulseaudio","custom/quit"],
+    "modules-right": ["clock", "network", "battery", "pulseaudio"],
     "modules-center": ["sway/workspaces"]
 }
