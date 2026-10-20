@@ -1,5 +1,13 @@
-profile DualScreen {
+profile second_only {
 	output eDP-1 disable
 	output HDMI-A-1 enable
 }
+
+profile dual_screen {
+	output eDP-1 enable position 0,0 
+	output HDMI-A-1 enable position 1920,0  
+}
+
+
+
 
