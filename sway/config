@@ -11,7 +11,8 @@ set $up k
 set $right l
 
 set $term ghostty
-set $menu wmenu-run
+set $menu rofi
+set $brows firefox
 
 # ==========================================
 # 2. OUTPUT & BACKGROUND
@@ -47,10 +48,10 @@ input type:keyboard {
 # 4. CORE BINDINGS
 # ==========================================
 # Apps
-bindsym $mod+Return          exec $term
-bindsym $mod+b               exec firefox
-bindsym $mod+d               exec $menu
-bindsym Alt+Space            exec rofi -show drun
+bindsym $mod+t               exec $term
+bindsym $mod+b               exec $brows
+bindsym $mod+d               exec zathura
+bindsym Alt+space            exec $menu -show drun
 
 # System
 bindsym $mod+Shift+q         kill
@@ -58,6 +59,7 @@ bindsym $mod+Shift+c         reload
 bindsym Alt+l                exec swaymsg exit 
 bindsym $mod+Shift+e         exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym Shift+Alt+p          exec poweroff
+bindsym Shift+Alt+s          exec systemctl suspend
 bindsym $mod+Shift+s         exec killall -SIGUSR1 waybar
 
 # ==========================================
@@ -114,8 +116,8 @@ bindsym $mod+7               workspace number 7
 bindsym $mod+8               workspace number 8
 bindsym $mod+9               workspace number 9
 bindsym $mod+0               workspace number 10
-bindsym $mod+Control+h       workspace next
-bindsym $mod+Control+l       workspace prev
+bindsym $mod+bracketright    workspace next
+bindsym $mod+bracketleft     workspace prev
 
 # Move container
 bindsym $mod+Shift+1         move container to workspace number 1
@@ -149,7 +151,7 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp   exec brightnessctl set 5%+
 
 # Screenshot
-bindsym Print                exec grim -g "$(slurp)" - | wl-copy --type image/png
+bindsym Print exec grim -g "$(slurp)" - | wl-copy --type image/png
 
 # ==========================================
 # 8. MODES
@@ -174,25 +176,28 @@ mode "resize" {
 # Screen Mode
 bindsym $mod+p mode "screen"
 mode "screen" {
-    bindsym $mod+1 exec swaymsg output eDP-1 toggle scale 1.3
-    bindsym $mod+2 exec swaymsg output HDMI-A-1 toggle 
+    bindsym $mod+1 exec kanshictl switch second_only
+    bindsym $mod+2 exec kanshictl switch dual_screen
     bindsym Escape mode "default"
 }
 
 # ==========================================
 # 9. WINDOW RULES
 # ==========================================
-assign [app_id="ghostty"] workspace 1
+assign [app_id="ghostty"] workspace 3
 for_window [app_id="ghostty"] focus
 
-assign [app_id="code"] workspace 1
-for_window [app_id="code"] focus, opacity 0.85
+assign [app_id="Code"] workspace 2
+for_window [app_id="Code"] focus, opacity 0.85
 
-assign [app_id="firefox"] workspace 2
+assign [app_id="firefox"] workspace 1
 for_window [app_id="firefox"] focus
 
 assign [class="discord"] workspace 4
 for_window [class="discord"] focus
+
+assign [app_id="zathura"] workspace 5
+for_window [app_id="zathura"] focus
 
 # ==========================================
 # 10. AUTOSTART (EXEC)

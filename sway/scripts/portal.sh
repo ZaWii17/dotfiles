@@ -1,7 +1,0 @@
-#!/bin/bash
-sleep 1
-killall -e xdg-desktop-portal-wlr
-killall -e xdg-desktop-portal
-/usr/lib/xdg-desktop-portal-wlr &
-sleep 2
-/usr/lib/xdg-desktop-portal &
