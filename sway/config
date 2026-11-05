@@ -48,7 +48,7 @@ input type:keyboard {
 # 4. CORE BINDINGS
 # ==========================================
 # Apps
-bindsym $mod+t               exec $term
+bindsym $mod+Return          exec $term
 bindsym $mod+b               exec $brows
 bindsym $mod+d               exec zathura
 bindsym Alt+space            exec $menu -show drun
@@ -196,8 +196,6 @@ for_window [app_id="firefox"] focus
 assign [class="discord"] workspace 4
 for_window [class="discord"] focus
 
-assign [app_id="zathura"] workspace 5
-for_window [app_id="zathura"] focus
 
 # ==========================================
 # 10. AUTOSTART (EXEC)
