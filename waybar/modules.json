@@ -13,10 +13,6 @@
     "tooltip-format-wifi": "{signalStrength}%",
     "max-length": 20
   },
-  "custom/quit": {
-    "format": "",
-    "on-click": "swaynag -f 'Terminus (TTF)'  -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'"
-  },
   "battery": {
     "states": {
       "good": 95,
@@ -55,16 +51,6 @@
   "sway/workspaces": {
     "format": "{name}",
     "on-click": "activate",
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "urgent": "",
-      "active": "",
-      "default": ""
-    },
     "sort-by-number": true
   }
 }
