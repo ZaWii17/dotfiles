@@ -2,12 +2,13 @@
     "layer": "top",
     "position": "top",
     "include": ["~/.config/waybar/modules.json"],
-
-    "margin-top": 2,
-    "margin-right": 2,
+    "margin-top": 0,
     "margin-bottom": 0,
-    "margin-left": 2,
+    "margin-left": 0,
+    "margin-right": 0,
 
-    "modules-right": ["clock", "network", "battery", "pulseaudio"],
-    "modules-center": ["sway/workspaces"]
+
+    "modules-right": ["network", "battery", "pulseaudio"],
+    "modules-center": ["clock"],
+    "modules-left": ["sway/workspaces"],
 }

@@ -1,7 +1,6 @@
 {
   "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%a %b %d}",
+    "format": "{:%H:%M %a %b %d}",
     "tooltip": false
   },
 
@@ -50,7 +49,6 @@
   },
   "sway/workspaces": {
     "format": "{name}",
-    "on-click": "activate",
     "sort-by-number": true
   }
 }
